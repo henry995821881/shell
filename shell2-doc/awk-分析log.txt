@@ -1,0 +1,1 @@
+ awk -F '{[a-z]+-[0-9]+}' '{print $2}' ./zhd.log |grep Statement >>new.log
