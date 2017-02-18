@@ -28,8 +28,12 @@ then
 	echo $file_name
 	echo $time_s
  # 创建文件夹
-  mkdir -p "$bash_path${foler:1}"
-  cp -rf $file_name "$bash_path${foler:1}"
+  target_path="$bash_path${foler:1}"
+ if [ ! -d "$target_path" ]; then
 
+      mkdir -p "$target_path"
+  fi
+
+  cp -rf $file_name  "$target_path"
 fi
 done
