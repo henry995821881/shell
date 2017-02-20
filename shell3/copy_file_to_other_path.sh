@@ -21,7 +21,7 @@ then
   
     file_name=$x
 
-    foler=`echo "$file_name" | awk -F "/[a-zA-Z_]+.$1" '{print $1}'`
+    foler=`echo "$file_name" | awk -F "/[a-zA-Z0-9_]*(.$file_type)$" '{print $1}'`
     
 
     echo $foler
