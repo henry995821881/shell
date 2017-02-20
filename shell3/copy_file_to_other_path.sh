@@ -5,7 +5,7 @@ file_type=$1
 
 #format 2011-12-12
 start_time=$2
-#输出主目录
+#输出主目录 /d/a/b/
 bash_path=$3
 
 start_time_s=`date +%s -d $start_time`
@@ -24,11 +24,11 @@ then
     foler=`echo "$file_name" | awk -F "/[a-zA-Z_]+.$1" '{print $1}'`
     
 
-    echo ${foler:1}
+    echo $foler
 	echo $file_name
 	echo $time_s
  # 创建文件夹
-  target_path="$bash_path${foler:1}"
+  target_path="$bash_path${foler:2}"
  if [ ! -d "$target_path" ]; then
 
       mkdir -p "$target_path"
